@@ -1,0 +1,52 @@
+body{
+  background-image: url(http://www.sunspirestudios.com/wp-content/uploads/2019/11/ielts-768x432.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100%;
+}
+.h1-1{
+  margin-top: 300px;
+  margin-bottom: 300px; 
+  font-family: Brush Script MT, Brush Script Std, cursive;
+  color: #fff;
+  font-weight: 700;
+  text-shadow: black 0 0 2px;
+  font-size: 100px;
+}
+.s-3{
+  background-color: #fff;
+  color: black;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+.img-1{
+  width: 500px;
+  margin-left: 800px;
+  margin-top: 30px;
+}
+.p-1{
+   padding-left: 50px;
+  font-size: 20px;
+  line-height: 30px;
+  margin-top: -350px;
+  font-weight: 700;
+  text-align: left;
+}
+.s-4{
+  margin-top: 100px;
+  margin-bottom: 100px;
+  color: #fff;
+}
+.h1-3{
+  color: #fff;
+  font-size: 50px;
+  font-family: Brush Script MT, Brush Script Std, cursive;
+}
+.s-5{
+  background-color: #fff;
+  padding-top: 100px;
+}
+.servis-id{
+  margin-top: -80px;
+  position: absolute;
+}

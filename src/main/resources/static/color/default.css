@@ -1,0 +1,43 @@
+a, a:hover {
+  color: orange;
+}
+
+
+/* Back to top button */
+.back-to-top {
+  background: orange;
+  color: #fff;
+}
+
+
+.back-to-top:focus {
+  background: orange;
+  color: #fff;
+}
+
+.back-to-top:hover {
+  background:#FF8600;
+  color: #fff;
+}
+
+.navbar-default {
+  background: orange;
+}
+
+.form-control:focus {
+  border-color: orange;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 2px #FF8E00;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075), 0 0 2px #FF8E00;
+}
+
+.service .carousel-indicators .active {
+  background: #FF8E00;
+}
+
+.btn-theme {
+  background: orange;
+}
+
+.contact-widget i {
+  color: orange;
+}

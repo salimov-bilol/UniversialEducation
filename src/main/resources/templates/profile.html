@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{template.html}"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+<section layout:fragment="content">
+    <header id="main-header" class="py-2 bg-secondary text-white">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <h1>
+                        <i class="fa fa-user"></i>
+                        Profile
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </header>
+    <section id="actions" class="py-4 mb-4 bg-light">
+        <div class="container">
+            <div class="row">
+                <div sec:authorize="hasRole('STUDENT')" class="col-md-3 mb-1">
+                    <a class="btn btn-outline-secondary btn-block" th:href="@{/index}">
+                        <i class="fa fa-arrow-circle-left"></i>
+                        <span>Back to Home</span>
+                    </a>
+                </div>
+                <div sec:authorize="hasRole('ADMIN')" class="col-md-3 mb-1">
+                    <a class="btn btn-outline-secondary btn-block"
+                       th:href="@{/admin/studentByCourse(courseId=${courseId})}">
+                        <i class="fa fa-arrow-circle-left"></i>
+                        <span>Back to Students</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="profile">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Student Details</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <ul class="list-unstyled">
+                                            <li>
+                                                <a class="justify-content-between d-flex">
+                                                    <p>First name</p>
+                                                    <span th:text="${user.firstName}"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="justify-content-between d-flex">
+                                                    <p>Last name</p>
+                                                    <span th:text="${user.lastName}"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="justify-content-between d-flex">
+                                                    <p>Username</p>
+                                                    <span th:text="${user.username}"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="justify-content-between d-flex">
+                                                    <p>Phone</p>
+                                                    <span th:text="${user.phone}"></span>
+                                                </a>
+                                            </li>
+                                            <li>
+                                                <a class="justify-content-between d-flex">
+                                                    <p>Address</p>
+                                                    <span th:text="${user.address}"></span>
+                                                </a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4>Statistics</h4>
+                        </div>
+                        <div class="card-body">
+                            <div class="right-contents">
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="justify-content-between d-flex">
+                                            <p>Total Mark</p>
+                                            <span th:text="${statistic.sum}"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="justify-content-between d-flex">
+                                            <p>Average Mark</p>
+                                            <span th:text="${#numbers.formatDecimal(statistic.average, 1, 'WHITESPACE', 2, 'POINT')}"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="justify-content-between d-flex">
+                                            <p>Count of Marks</p>
+                                            <span th:text="${statistic.count}"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="justify-content-between d-flex">
+                                            <p>Max Mark</p>
+                                            <span th:text="${statistic.max}"></span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a class="justify-content-between d-flex">
+                                            <p>Min Mark</p>
+                                            <span th:text="${statistic.min}"></span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</section>
+</body>
+</html>
