@@ -7,10 +7,6 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Service;
 
-import java.sql.Date;
-import java.time.LocalDate;
-import java.util.Objects;
-
 @Service
 public class EnrollmentService {
 
@@ -35,7 +31,7 @@ public class EnrollmentService {
 
     private boolean isEnrolled(Long userId, Long courseId) {
         var query = "select * from lms.enrollment where user_id = ? and course_id = ?";
-        RowMapper<Date> mapperFunction = (rs, numRow) -> rs.getDate("date");
+        RowMapper<Integer> mapperFunction = (rs, numRow) -> rs.getInt("user_id");
         try {
             this.jdbcTemplate.queryForObject(query, mapperFunction, userId, courseId);
         } catch (EmptyResultDataAccessException ex) {
